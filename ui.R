@@ -1,3 +1,5 @@
+library(leaflet)
+
 shinyUI(fluidPage(
   titlePanel("User distributed map"),
   fluidRow(
