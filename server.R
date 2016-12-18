@@ -5,7 +5,7 @@ library(readr)
 library(dplyr)
 library(geojsonio)
 
-T.map <- readOGR(dsn="OFiles", layer="County_MOI_1041215.shp")
+T.map <- readOGR(dsn="OFiles", layer="County_MOI_1041215")
 acdnt <- read_csv("OFiles/English_data_for_graphing.csv")
 
 shinyServer(function(input, output) { 
