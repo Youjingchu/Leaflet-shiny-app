@@ -5,6 +5,7 @@ library(readr)
 library(dplyr)
 library(geojsonio)
 library(plotly)
+library(DT)
 
 # data downloaded
 T.map <- readOGR(dsn="OFiles", layer="County_MOI_1041215")
