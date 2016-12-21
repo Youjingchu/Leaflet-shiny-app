@@ -22,6 +22,13 @@ body<-dashboardBody(
                dataTableOutput("dataTable")
            )
     )
+  ),
+  fluidRow(
+    column(width=12,
+           box(width=NULL,
+               dataTableOutput("dataTable")
+           )
+    )
   )
 )
 
