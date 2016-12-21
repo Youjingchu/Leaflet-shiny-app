@@ -8,10 +8,10 @@ body<-dashboardBody(
   fluidRow(
     column(width = 6,
            box(width = NULL, solidHeader = TRUE,
-               leafletOutput("TaiwanMap", height=400)
+               leafletOutput("TaiwanMap", height=370)
            ),
            box(width=NULL,
-               dataTableOutput("dataTable")
+               plotlyOutput("barchart")
            )
     ),
     column(width=6,
@@ -19,7 +19,7 @@ body<-dashboardBody(
                uiOutput("yearSelect")
            ),
            box(width=NULL,
-               plotlyOutput("barchart")
+               dataTableOutput("dataTable")
            )
     )
   )
