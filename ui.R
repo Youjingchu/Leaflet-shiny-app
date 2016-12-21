@@ -1,6 +1,7 @@
 library(shinydashboard)
 library(leaflet)
 library(plotly)
+library(DT)
 
 header<-dashboardHeader(title="Situation of Credit Card in Taiwan",titleWidth = 500)
 
