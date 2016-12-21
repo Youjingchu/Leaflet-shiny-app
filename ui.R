@@ -1,9 +1,32 @@
+library(shinydashboard)
 library(leaflet)
+library(plotly)
 
-shinyUI(fluidPage(
-  titlePanel("User distributed map"),
+header<-dashboardHeader(title="Situation of Credit Card in Taiwan",titleWidth = 500)
+
+body<-dashboardBody(
   fluidRow(
-    
-  ),
-  mainPanel(leafletOutput("distPlot1", width = "150%", height = "540px"))
-))
+    column(width = 6,
+           box(width = NULL, solidHeader = TRUE,
+               leafletOutput("TaiwanMap", height=400)
+           ),
+           box(width=NULL,
+               dataTableOutput("dataTable")
+           )
+    ),
+    column(width=6,
+           box(width=NULL, 
+               uiOutput("yearSelect")
+           ),
+           box(width=NULL,
+               plotlyOutput("barchart")
+           )
+    )
+  )
+)
+
+dashboardPage(
+  header,
+  dashboardSidebar(disable = TRUE),
+  body
+)
