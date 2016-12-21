@@ -7,14 +7,14 @@ library(geojsonio)
 library(plotly)
 
 # data downloaded
-T.map <- readOGR(dsn="OFiles", layer="County_MOI_1041215")
+T.map <- readOGR(dsn="C:/Users/HermanChu/Desktop/OFiles", layer="County_MOI_1041215")
 
 # Cut out unnecessary columns
 GPSdata <- T.map@data %>% select(3)
 GPSdata$C_Name <- iconv(GPSdata$C_Name,"UTF-8")
 
 # Get the credit car data 
-Cdata <- read_csv("OFiles/credit card_data.csv")
+Cdata <- read_csv("C:/Users/HermanChu/Desktop/credit card_data.csv")
 
 
 shinyServer(function(input, output) { 
@@ -80,7 +80,7 @@ shinyServer(function(input, output) {
     names(dataSet)<-c("County","avg. number_by month","avg. Money_by month")
     dataSet
     },
-  options = list(pageLength = nrow(22)))
+  options = list(lengthMenu = c(5, 10, 22),pageLength = nrow(5)))
   )
   
   output$barchart <- renderPlotly({
