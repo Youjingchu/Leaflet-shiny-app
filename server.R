@@ -87,9 +87,9 @@ shinyServer(function(input, output) {
   output$barchart <- renderPlotly({
     dataSet<-getDataSet()
     plot_ly(dataSet,x = ~C_Name) %>%
-      add_trace(x = ~C_Name, y = ~consumption, type = 'bar', name = 'number'
+      add_trace(x = ~C_Name, y = ~consumption, type = 'bar', name = 'money'
       ) %>%
-      add_markers(y = ~number, yaxis = "y2",name = 'money',marker = list(size = 10)
+      add_markers(y = ~number, yaxis = "y2",name = 'number',marker = list(size = 10)
       ) %>%
       layout(title = 'Situation of Credit Card in Taiwan',
              xaxis = list(title = ""),
